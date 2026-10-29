@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="style.css" />
     <!-- Add the <script type="module"> for this page here. -->
     <title>Book details | Book Library</title>
+    <script type="module" src="dist/details.js"></script>
   </head>
   <body>
     <header class="header">
@@ -43,34 +44,34 @@
         </div>
       </div>
     </header>
+
     <main class="container">
       <h1>
-        Sapiens<br />
-        <small>A Brief History of Humankind</small>
+        <span id="book-title">Loading...</span><br />
+        <small id="book-subtitle"></small>
       </h1>
+
       <section class="row">
         <div class="column column-67">
           <h3>Abstract</h3>
-          <p>
-            One hundred thousand years ago, at least six human species
-            inhabited the earth. Today there is just one. Us. Sapiens explores
-            how an unremarkable ape became the ruler of planet Earth ...
-          </p>
+          <p id="book-abstract"></p>
 
           <h4>Details</h4>
           <ul>
-            <li><strong>Author:</strong> Yuval Noah Harari</li>
-            <li><strong>Publisher:</strong> Harper</li>
-            <li><strong>Pages:</strong> 443</li>
+            <li><strong>Author:</strong> <span id="book-author"></span></li>
+            <li>
+              <strong>Publisher:</strong> <span id="book-publisher"></span>
+            </li>
+            <li><strong>Pages:</strong> <span id="book-pages"></span></li>
+            <li><strong>ISBN:</strong> <span id="book-isbn"></span></li>
+            <li><strong>Price:</strong> <span id="book-price"></span></li>
           </ul>
 
           <a href="index.html" class="button button-outline">Back</a>
         </div>
+
         <div class="column column-33">
-          <img
-            src="http://localhost:4730/covers/9780062316097.png"
-            alt="Cover of Sapiens"
-          />
+          <img id="book-cover" src="" alt="Book cover" />
         </div>
       </section>
     </main>
