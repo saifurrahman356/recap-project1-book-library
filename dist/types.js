@@ -36,3 +36,4 @@ export function isBook(value) {
         "updatedAt" in value &&
         typeof value.updatedAt === "string");
 }
+export const STORAGE_KEY = "favorite-books";

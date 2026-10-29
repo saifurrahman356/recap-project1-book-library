@@ -1,4 +1,5 @@
 import { fetchBookByIsbn } from "./bookService.js";
+import { updateFavoriteCount } from "./favoriteService.js";
 import { isBook, type Book } from "./types.js";
 
 function renderBookDetails(book: Book): void {
@@ -16,6 +17,8 @@ function renderBookDetails(book: Book): void {
 
   cover.src = book.cover;
   cover.alt = `Cover of ${book.title}`;
+
+  updateFavoriteCount();
 }
 
 async function init(): Promise<void> {

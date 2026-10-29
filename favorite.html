@@ -35,30 +35,32 @@
             <nav class="mainnav">
               <a href="index.html" class="mainnav-link">Books</a>
               <a href="favorite.html" class="mainnav-link mainnav-link--active"
-                >Favorites <span class="mainnav-number">2</span></a
+                >Favorites
+                <span class="mainnav-number" id="favorite-count">2</span></a
               >
             </nav>
           </div>
         </div>
       </div>
     </header>
+
     <main class="container">
-      <h2>2 Favorites on your list</h2>
+      <h2 id="favorites-heading">Loading favorites...</h2>
+
       <section class="row filter-search">
-        <form action="#" class="column">
+        <form action="#" class="column" id="search-form">
           <label for="search">Search</label>
-          <input type="text" id="search" />
+          <input type="text" id="search" placeholder="Title, ISBN, or author" />
         </form>
 
-        <form action="#" class="column column-33">
+        <form action="#" class="column column-33" id="publisher-form">
           <label for="by-publisher">Filter by Publisher</label>
           <select id="by-publisher">
-            <option value="-">-</option>
-            <option value="Bloomsbury">Bloomsbury</option>
-            <option value="Ace Books">Ace Books</option>
+            <option value="">All publishers</option>
           </select>
         </form>
       </section>
+
       <section class="row">
         <div class="column">
           <table>
@@ -72,62 +74,7 @@
                 <th>&nbsp;</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <button class="button button-clear fav-btn">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      class="fav"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z"
-                        clip-rule="evenodd"
-                      />
-                    </svg>
-                  </button>
-                </td>
-                <td>Harry Potter and the Philosopher’s Stone</td>
-                <td>9780747532699</td>
-                <td>J. K. Rowling</td>
-                <td>Bloomsbury</td>
-                <td>
-                  <a href="detail.html?isbn=9780747532699" class="button">
-                    Detail
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <button class="button button-clear fav-btn">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      class="fav"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z"
-                        clip-rule="evenodd"
-                      />
-                    </svg>
-                  </button>
-                </td>
-                <td>Dune</td>
-                <td>9780441172719</td>
-                <td>Frank Herbert</td>
-                <td>Ace Books</td>
-                <td>
-                  <a href="detail.html?isbn=9780441172719" class="button">
-                    Detail
-                  </a>
-                </td>
-              </tr>
-            </tbody>
+            <tbody id="favorite-list"></tbody>
           </table>
         </div>
       </section>

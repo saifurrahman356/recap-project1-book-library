@@ -1,4 +1,5 @@
 import { fetchBookByIsbn } from "./bookService.js";
+import { updateFavoriteCount } from "./favoriteService.js";
 function renderBookDetails(book) {
     document.querySelector("#book-title").textContent = book.title;
     document.querySelector("#book-subtitle").textContent = book.subtitle;
@@ -12,6 +13,7 @@ function renderBookDetails(book) {
     const cover = document.querySelector("#book-cover");
     cover.src = book.cover;
     cover.alt = `Cover of ${book.title}`;
+    updateFavoriteCount();
 }
 async function init() {
     const params = new URLSearchParams(window.location.search);

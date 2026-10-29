@@ -64,7 +64,7 @@ export interface ApiResponse<T> {
   data: T;
 }
 
-type BookListView = Pick<
+export type FavoriteBook = Pick<
   Book,
   "id" | "title" | "isbn" | "author" | "publisher"
 >;
@@ -80,3 +80,4 @@ type BookDetailsView = Pick<
   | "numPages"
   | "cover"
 >;
+export const STORAGE_KEY = "favorite-books";
